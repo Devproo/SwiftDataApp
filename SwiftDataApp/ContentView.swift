@@ -12,9 +12,9 @@ enum SortOption: String,CaseIterable{
     
     
     case asEntered = "As Entered"
-    case alphabetical = "A - Z"
+    case alphabetical = "A-Z"
     case chronological = "Date"
-    case isCompleted = "Not Done"
+    case isCompleted = "NotDone"
 }
 struct SortedList: View {
     @Environment(\.modelContext) private var modelContext
@@ -51,7 +51,7 @@ struct SortedList: View {
                     .font(.title2)
                     HStack {
                         Text(item.dueDate.formatted(date: .abbreviated, time: .shortened))
-                        if (item.reminderIOn) {
+                        if (item.reminderOn) {
                             Image(systemName: "calendar.badge.clock")
                                 .symbolRenderingMode(.multicolor)
                         }

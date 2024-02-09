@@ -21,7 +21,7 @@ struct DetailView: View {
                 .padding(.vertical)
                 .listRowSeparator(.hidden)
             
-            Toggle(isOn: $item.reminderIOn, label: {
+            Toggle(isOn: $item.reminderOn, label: {
                 Text("Set reminder")
             })
             .padding(.top)
@@ -30,7 +30,7 @@ struct DetailView: View {
             DatePicker("Date", selection: $item.dueDate)
                 .listRowSeparator(.hidden)
                 .padding(.bottom)
-                .disabled(!item.reminderIOn)
+                .disabled(!item.reminderOn)
             
             Text("notes")
                 .padding(.top)
