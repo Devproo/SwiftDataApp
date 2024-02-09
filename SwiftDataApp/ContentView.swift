@@ -12,9 +12,9 @@ enum SortOption: String,CaseIterable{
     
     
     case asEntered = "As Entered"
-    case alphabetical = "A - Z"
+    case alphabetical = "A-Z"
     case chronological = "Date"
-    case isCompleted = "Not Done"
+    case isCompleted = "NotDone"
 }
 struct SortedList: View {
     @Environment(\.modelContext) private var modelContext
