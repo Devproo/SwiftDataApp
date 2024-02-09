@@ -12,7 +12,7 @@ enum SortOption: String,CaseIterable{
     
     
     case asEntered = "As Entered"
-    case alphabetical = "A to Z"
+    case alphabetical = "A - Z"
     case chronological = "Date"
     case isCompleted = "Not Done"
 }
