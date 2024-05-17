@@ -67,7 +67,9 @@ struct DetailView: View {
 
 #Preview {
     NavigationStack {
-        DetailView( item: Item())
-            .modelContainer(for: Item.self)
+       DetailView( item: Item())
+           .modelContainer(for: Item.self)
+
+       
     }
 }
