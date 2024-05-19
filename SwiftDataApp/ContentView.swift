@@ -32,13 +32,14 @@ struct ContentView: View {
                                 Text(sortOrder.rawValue)
                             }
                         }
-                        .pickerStyle(.segmented)
+                      .pickerStyle(.segmented)
+                       
                     }
                 }
                 .sheet(isPresented: $sheetIsPresented) {
-                    
+                    NavigationStack {
                         DetailView(item: Item())
-                  
+                    }
                 }
         }
     }
