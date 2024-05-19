@@ -35,12 +35,11 @@ struct ContentView: View {
                       .pickerStyle(.segmented)
                        
                     }
+                    
                 }
                 .sheet(isPresented: $sheetIsPresented) {
-                    NavigationStack {
-                        DetailView(item: Item())
+                DetailView(item: Item())
                     }
-                }
         }
     }
 }
