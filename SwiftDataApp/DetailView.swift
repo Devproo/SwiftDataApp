@@ -59,10 +59,10 @@ struct DetailView: View {
                         dismiss()
                     }
                 }
-                }
+            }
+            .navigationTitle("NewItem")
+          .navigationBarTitleDisplayMode(.inline)
         }
-        .navigationBarBackButtonHidden()
-        .navigationBarTitleDisplayMode(.inline)
     }
 }
 
