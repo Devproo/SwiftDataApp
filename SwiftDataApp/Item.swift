@@ -16,9 +16,9 @@ final class Item {
     var notes = ""
     var isCompleted = false
     
-    init(item: String = "", reminderIOn: Bool = false, dueDate: Date = Date.now + (60*60*24), notes: String = "", isCompleted: Bool = false) {
+    init(item: String = "", reminderOn: Bool = false, dueDate: Date = Date.now + (60*60*24), notes: String = "", isCompleted: Bool = false) {
         self.item = item
-        self.reminderOn = reminderIOn
+        self.reminderOn = reminderOn
         self.dueDate = dueDate
         self.notes = notes
         self.isCompleted = isCompleted

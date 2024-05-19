@@ -11,6 +11,7 @@ import SwiftData
 struct ContentView: View {
     @State private var sheetIsPresented = false
     @State var sortSelection: SortOption = .asEntered
+    
     var body: some View {
         NavigationStack {
             SortedListView(sortSelection: sortSelection)

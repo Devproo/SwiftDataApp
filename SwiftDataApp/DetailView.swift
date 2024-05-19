@@ -10,7 +10,7 @@ import SwiftData
 
 struct DetailView: View {
     @Environment(\.dismiss) private var dismiss
-    @State var item: Item
+    @State var  item: Item
     @Environment(\.modelContext) var modelContext
     
     var body: some View {
@@ -67,9 +67,8 @@ struct DetailView: View {
 
 #Preview {
     NavigationStack {
-       DetailView( item: Item())
-           .modelContainer(for: Item.self)
+        DetailView(item: Item(item: "Sample item", reminderOn: false, dueDate: Date(), notes: "", isCompleted: false))
+         
 
-       
     }
 }
