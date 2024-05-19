@@ -36,9 +36,9 @@ struct ContentView: View {
                     }
                 }
                 .sheet(isPresented: $sheetIsPresented) {
-                    NavigationStack {
+                    
                         DetailView(item: Item())
-                    }
+                  
                 }
         }
     }
