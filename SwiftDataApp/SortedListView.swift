@@ -12,15 +12,35 @@ struct SortedListView: View {
     
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
+    
+    //    var sortSelection: SortOption
+    //    init(sortSelection: SortOption) {
+    //        self.sortSelection = sortSelection
+    //
+    //        switch sortSelection {
+    //        case .asEntered: _items = Query()
+    //        case .alphabetical: _items = Query(sort: \.item, animation: .default)
+    //        case .chronological: _items = Query(sort: \.dueDate)
+    //        case .isCompleted: _items = Query(filter: #Predicate { $0.isCompleted == false })
+    //        }
+    //    }
+   //     this is more clear
     var sortSelection: SortOption
     init(sortSelection: SortOption) {
-        self.sortSelection = sortSelection
-        switch sortSelection {
-        case .asEntered: _items = Query()
-        case .alphabetical: _items = Query(sort: \.item, animation: .default)
-        case .chronological: _items = Query(sort: \.dueDate)
-        case .isCompleted: _items = Query(filter: #Predicate { $0.isCompleted == false })
-        }
+        
+        self.sortSelection  = sortSelection
+        _items = {
+            switch sortSelection {
+            case .asEntered:
+                return Query()
+            case .alphabetical:
+                return Query(sort:\.item, animation:  .default)
+            case .chronological:
+                return Query(sort: \.dueDate)
+            case .isCompleted:
+                return Query(filter: #Predicate { $0.isCompleted})
+            }
+        }()
     }
     
     var body: some View {
@@ -61,5 +81,26 @@ struct SortedListView: View {
 }
 
 #Preview {
-    SortedListView(sortSelection: .asEntered)
+    ModelContainerPreview {
+        try ModelContainer.sample()
+    } content: {
+        NavigationStack {
+            SortedListView(sortSelection: .asEntered)
+        }
+       
+    }
+
+        
+}
+
+#Preview {
+    ModelContainerPreview {
+        NavigationStack {
+            SortedListView(sortSelection: .chronological)
+        }
+    } modelContainer: {
+        try ModelContainer.sample()
+    }
+
+    
 }

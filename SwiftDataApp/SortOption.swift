@@ -8,7 +8,7 @@
 import SwiftUI
 import SwiftData
 
-enum SortOption: String,CaseIterable{
+enum SortOption: String,CaseIterable {
     case asEntered = "As Entered"
     case alphabetical = "A-Z"
     case chronological = "Date"
