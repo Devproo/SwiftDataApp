@@ -46,5 +46,5 @@ struct ContentView: View {
 
 #Preview {
     ContentView()
-        .modelContainer(for: Item.self)
+        .modelContainer(try! ModelContainer.sample())
 }
