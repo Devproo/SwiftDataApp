@@ -61,15 +61,39 @@ struct DetailView: View {
                 }
             }
             .navigationTitle("NewItem")
-          .navigationBarTitleDisplayMode(.inline)
+            .navigationBarTitleDisplayMode(.inline)
         }
     }
 }
 
 #Preview {
-ModelContainerPreview(ModelContainer.sample) {
+    ModelContainerPreview(ModelContainer.sample) {
         NavigationStack {
             DetailView(item: Item(item: "Sample item", reminderOn: false, dueDate: Date(), notes: "", isCompleted: false))
+            
         }
     }
+    
+}
+
+#Preview {
+    ModelContainerPreview {
+        DetailView(item: Item.item1)
+    } modelContainer: {
+        try  ModelContainer.sample()
+    }
+    
+}
+
+#Preview {
+    
+    ModelContainerPreview {
+        try ModelContainer.sample()
+    } content: {
+        NavigationStack {
+            DetailView(item: Item())
+        }
+    }
+    
+    
 }
