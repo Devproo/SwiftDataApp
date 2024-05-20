@@ -67,9 +67,9 @@ struct DetailView: View {
 }
 
 #Preview {
-    NavigationStack {
-        DetailView(item: Item(item: "Sample item", reminderOn: false, dueDate: Date(), notes: "", isCompleted: false))
-        
-        
+ModelContainerPreview(ModelContainer.sample) {
+        NavigationStack {
+            DetailView(item: Item(item: "Sample item", reminderOn: false, dueDate: Date(), notes: "", isCompleted: false))
+        }
     }
 }

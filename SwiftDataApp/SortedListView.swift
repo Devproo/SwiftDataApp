@@ -13,7 +13,6 @@ struct SortedListView: View {
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
     var sortSelection: SortOption
-   
     init(sortSelection: SortOption) {
         self.sortSelection = sortSelection
         switch sortSelection {

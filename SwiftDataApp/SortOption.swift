@@ -14,6 +14,6 @@ enum SortOption: String,CaseIterable{
     case chronological = "Date"
     case isCompleted = "NotDone"
     
-    
+   
 
 }
