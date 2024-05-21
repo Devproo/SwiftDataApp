@@ -16,6 +16,7 @@ struct ContentView: View {
     var body: some View {
         NavigationStack {
             SortedListView(sortSelection: sortSelection)
+                
                 .navigationTitle("To Do List")
                 .navigationBarTitleDisplayMode(.automatic)
             
@@ -42,8 +43,8 @@ struct ContentView: View {
                     DetailView(item: Item())
                 }
             
-        }
-        .environment(navigationContext)
+        }.environment(navigationContext)
+        
     }
 }
 

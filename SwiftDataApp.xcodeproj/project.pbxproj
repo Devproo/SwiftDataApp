@@ -7,7 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
-		7F47CD9A2B76A132008B5024 /* SwiftDataAppApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F47CD992B76A132008B5024 /* SwiftDataAppApp.swift */; };
+		7F47CD9A2B76A132008B5024 /* SwiftDataApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F47CD992B76A132008B5024 /* SwiftDataApp.swift */; };
 		7F47CD9C2B76A132008B5024 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F47CD9B2B76A132008B5024 /* ContentView.swift */; };
 		7F47CD9E2B76A132008B5024 /* Item.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F47CD9D2B76A132008B5024 /* Item.swift */; };
 		7F47CDA02B76A136008B5024 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 7F47CD9F2B76A136008B5024 /* Assets.xcassets */; };
@@ -23,7 +23,7 @@
 
 /* Begin PBXFileReference section */
 		7F47CD962B76A132008B5024 /* SwiftDataApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftDataApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
-		7F47CD992B76A132008B5024 /* SwiftDataAppApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataAppApp.swift; sourceTree = "<group>"; };
+		7F47CD992B76A132008B5024 /* SwiftDataApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SwiftDataApp.swift; sourceTree = "<group>"; };
 		7F47CD9B2B76A132008B5024 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		7F47CD9D2B76A132008B5024 /* Item.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Item.swift; sourceTree = "<group>"; };
 		7F47CD9F2B76A136008B5024 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
@@ -67,7 +67,7 @@
 		7F47CD982B76A132008B5024 /* SwiftDataApp */ = {
 			isa = PBXGroup;
 			children = (
-				7F47CD992B76A132008B5024 /* SwiftDataAppApp.swift */,
+				7F47CD992B76A132008B5024 /* SwiftDataApp.swift */,
 				7F47CD9D2B76A132008B5024 /* Item.swift */,
 				7F78A6BF2BFBB4FA00986DE3 /* ItemCategory.swift */,
 				7FD02F182BF9EEC600B0BAEB /* SortOption.swift */,
@@ -168,7 +168,7 @@
 				7F47CDAA2B76A3CB008B5024 /* DetailView.swift in Sources */,
 				7F47CD9E2B76A132008B5024 /* Item.swift in Sources */,
 				7FD02F1B2BF9EF2000B0BAEB /* SortedListView.swift in Sources */,
-				7F47CD9A2B76A132008B5024 /* SwiftDataAppApp.swift in Sources */,
+				7F47CD9A2B76A132008B5024 /* SwiftDataApp.swift in Sources */,
 				7FD603B42BFB4A6400924DEB /* SampleData.swift in Sources */,
 				7F78A6C02BFBB4FA00986DE3 /* ItemCategory.swift in Sources */,
 			);

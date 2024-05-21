@@ -1,5 +1,5 @@
 //
-//  SwiftDataAppApp.swift
+//  SwiftDataApp.swift
 //  SwiftDataApp
 //
 //  Created by ipeerless on 09/02/2024.
@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 @main
-struct SwiftDataAppApp: App {
+struct SwiftDataApp: App {
     
     var body: some Scene {
         WindowGroup {
