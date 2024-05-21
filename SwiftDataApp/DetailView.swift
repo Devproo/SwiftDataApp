@@ -12,7 +12,7 @@ struct DetailView: View {
     @Environment(\.dismiss) private var dismiss
     @State var  item: Item
     @Environment(\.modelContext) var modelContext
-    
+    @Environment(NavigationContext.self) private var navigationContext
     var body: some View {
         NavigationStack {
             List {
@@ -65,33 +65,34 @@ struct DetailView: View {
         }
     }
 }
-
+// first kind preview
 #Preview {
     ModelContainerPreview(ModelContainer.sample) {
-        NavigationStack {
-            DetailView(item: Item(item: "", reminderOn: false, dueDate: Date(), notes: "", isCompleted: false))
-            
-        }
+        
+        DetailView(item: Item(item: "", reminderOn: false, dueDate: Date(), notes: "", isCompleted: false))
+            .environment(NavigationContext())
     }
     
 }
-
+// second  kind preview
 #Preview {
     ModelContainerPreview {
         DetailView(item: Item.item1)
+            .environment(NavigationContext())
     } modelContainer: {
         try  ModelContainer.sample()
     }
     
 }
 
+//third kind preview
 #Preview {
     
     ModelContainerPreview {
         try ModelContainer.sample()
     } content: {
-        NavigationStack {
-            DetailView(item: Item())
-        }
+        DetailView(item: Item())
+            .environment(NavigationContext())
+        
     }
 }

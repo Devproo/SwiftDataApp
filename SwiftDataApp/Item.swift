@@ -15,13 +15,15 @@ final class Item {
     var dueDate = Date.now + (60*60*24)
     var notes = ""
     var isCompleted = false
+    var category: ItemCategory?
     
-    init(item: String = "", reminderOn: Bool = false, dueDate: Date = Date.now + (60*60*24), notes: String = "", isCompleted: Bool = false) {
+    init(item: String = "", reminderOn: Bool = false, dueDate: Date = Date.now + (60*60*24), notes: String = "", isCompleted: Bool = false, category: ItemCategory? = nil) {
         self.item = item
         self.reminderOn = reminderOn
         self.dueDate = dueDate
         self.notes = notes
         self.isCompleted = isCompleted
+        self.category = category
     }
 }
 

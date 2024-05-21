@@ -9,7 +9,7 @@ import SwiftUI
 import SwiftData
 
 struct SortedListView: View {
-    
+    @Environment(NavigationContext.self) private var navigationContext
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
     
@@ -24,7 +24,7 @@ struct SortedListView: View {
     //        case .isCompleted: _items = Query(filter: #Predicate { $0.isCompleted == false })
     //        }
     //    }
-   //     this is more clear
+    //     this is more clear
     var sortSelection: SortOption
     init(sortSelection: SortOption) {
         
@@ -81,26 +81,11 @@ struct SortedListView: View {
 }
 
 #Preview {
-    ModelContainerPreview {
-        try ModelContainer.sample()
-    } content: {
-        NavigationStack {
-            SortedListView(sortSelection: .asEntered)
-        }
-       
+    ModelContainerPreview(ModelContainer.sample) {
+        SortedListView(sortSelection: .asEntered)
+            .environment(NavigationContext())
     }
-
-        
-}
-
-#Preview {
-    ModelContainerPreview {
-        NavigationStack {
-            SortedListView(sortSelection: .chronological)
-        }
-    } modelContainer: {
-        try ModelContainer.sample()
-    }
-
     
 }
+
+

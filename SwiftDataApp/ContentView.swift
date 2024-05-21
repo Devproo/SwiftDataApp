@@ -11,6 +11,7 @@ import SwiftData
 struct ContentView: View {
     @State private var sheetIsPresented = false
     @State var sortSelection: SortOption = .asEntered
+    @State private var navigationContext = NavigationContext()
     
     var body: some View {
         NavigationStack {
@@ -40,7 +41,9 @@ struct ContentView: View {
                 .sheet(isPresented: $sheetIsPresented) {
                     DetailView(item: Item())
                 }
+            
         }
+        .environment(navigationContext)
     }
 }
 
