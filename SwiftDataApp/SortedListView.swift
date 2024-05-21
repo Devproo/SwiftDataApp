@@ -8,8 +8,16 @@
 import SwiftUI
 import SwiftData
 
+enum SortOption: String,CaseIterable {
+    case asEntered = "As Entered"
+    case alphabetical = "A-Z"
+    case chronological = "Date"
+    case isCompleted = "NotDone"
+    
+   }
+
 struct SortedListView: View {
-    @Environment(NavigationContext.self) private var navigationContext
+//    @Environment(NavigationContext.self) private var navigationContext
     @Environment(\.modelContext) private var modelContext
     @Query private var items: [Item]
     
@@ -44,46 +52,50 @@ struct SortedListView: View {
     }
     
     var body: some View {
-        List {
-            ForEach(items) { item in
-                VStack(alignment: .leading) {
-                    HStack {
-                        Image(systemName: item.isCompleted ? "checkmark.rectangle" : "rectangle")
-                            .onTapGesture {
-                                item.isCompleted.toggle()
+        NavigationStack {
+            List {
+                ForEach(items) { item in
+                    VStack(alignment: .leading) {
+                        HStack {
+                            Image(systemName: item.isCompleted ? "checkmark.rectangle" : "rectangle")
+                                .onTapGesture {
+                                    item.isCompleted.toggle()
+                                }
+                            
+                            NavigationLink {
+                                DetailView(item: item)
+                            } label: {
+                                Text(item.item)
                             }
+                        }
+                        .font(.title2)
+                        HStack {
+                            Text(item.dueDate.formatted(date: .abbreviated, time: .shortened))
+                            if (item.reminderOn) {
+                                Image(systemName: "calendar.badge.clock")
+                                    .symbolRenderingMode(.multicolor)
+                            }
+                        }
                         
-                        NavigationLink {
-                            DetailView(item: item)
-                        } label: {
-                            Text(item.item)
-                        }
                     }
-                    .font(.title2)
-                    HStack {
-                        Text(item.dueDate.formatted(date: .abbreviated, time: .shortened))
-                        if (item.reminderOn) {
-                            Image(systemName: "calendar.badge.clock")
-                                .symbolRenderingMode(.multicolor)
+                    .swipeActions {
+                        Button("Delete", role: .destructive) {
+                            modelContext.delete(item)
                         }
-                    }
-                    
-                }
-                .swipeActions {
-                    Button("Delete", role: .destructive) {
-                        modelContext.delete(item)
                     }
                 }
             }
+            .listStyle(.plain)
         }
-        .listStyle(.plain)
     }
 }
 
 #Preview {
     ModelContainerPreview(ModelContainer.sample) {
-        SortedListView(sortSelection: .asEntered)
-            .environment(NavigationContext())
+        NavigationStack {
+            SortedListView(sortSelection: .asEntered)
+//                .environment(NavigationContext())
+        }
     }
     
 }

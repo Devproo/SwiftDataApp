@@ -12,7 +12,7 @@ struct DetailView: View {
     @Environment(\.dismiss) private var dismiss
     @State var  item: Item
     @Environment(\.modelContext) var modelContext
-    @Environment(NavigationContext.self) private var navigationContext
+//    @Environment(NavigationContext.self) private var navigationContext
     var body: some View {
         NavigationStack {
             List {
@@ -70,7 +70,7 @@ struct DetailView: View {
     ModelContainerPreview(ModelContainer.sample) {
         
         DetailView(item: Item(item: "", reminderOn: false, dueDate: Date(), notes: "", isCompleted: false))
-            .environment(NavigationContext())
+//            .environment(NavigationContext())
     }
     
 }
@@ -78,7 +78,7 @@ struct DetailView: View {
 #Preview {
     ModelContainerPreview {
         DetailView(item: Item.item1)
-            .environment(NavigationContext())
+//            .environment(NavigationContext())
     } modelContainer: {
         try  ModelContainer.sample()
     }
@@ -92,7 +92,7 @@ struct DetailView: View {
         try ModelContainer.sample()
     } content: {
         DetailView(item: Item())
-            .environment(NavigationContext())
+//            .environment(NavigationContext())
         
     }
 }
