@@ -16,7 +16,7 @@
 		7F78A6C02BFBB4FA00986DE3 /* ItemCategory.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F78A6BF2BFBB4FA00986DE3 /* ItemCategory.swift */; };
 		7F78A6C22BFBB6C100986DE3 /* NavigationContext.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F78A6C12BFBB6C100986DE3 /* NavigationContext.swift */; };
 		7F9553A42BFF4A27007CC505 /* ItemCategoryListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F9553A32BFF4A27007CC505 /* ItemCategoryListView.swift */; };
-		7FD02F1B2BF9EF2000B0BAEB /* ItemListView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD02F1A2BF9EF2000B0BAEB /* ItemListView.swift */; };
+		7FCA46412C00F979005F3E77 /* gitignore in Resources */ = {isa = PBXBuildFile; fileRef = 7FCA46402C00F979005F3E77 /* gitignore */; };
 		7FD603B22BFB4A3400924DEB /* ModelContainerPreview.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD603B12BFB4A3400924DEB /* ModelContainerPreview.swift */; };
 		7FD603B42BFB4A6400924DEB /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FD603B32BFB4A6400924DEB /* SampleData.swift */; };
 		7FE062852BFF9050004283C7 /* MainRootView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FE062842BFF9050004283C7 /* MainRootView.swift */; };
@@ -35,7 +35,7 @@
 		7F78A6C12BFBB6C100986DE3 /* NavigationContext.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationContext.swift; sourceTree = "<group>"; };
 		7F9553A22BFF4164007CC505 /* SwiftDataApp.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = SwiftDataApp.entitlements; sourceTree = "<group>"; };
 		7F9553A32BFF4A27007CC505 /* ItemCategoryListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemCategoryListView.swift; sourceTree = "<group>"; };
-		7FD02F1A2BF9EF2000B0BAEB /* ItemListView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ItemListView.swift; sourceTree = "<group>"; };
+		7FCA46402C00F979005F3E77 /* gitignore */ = {isa = PBXFileReference; lastKnownFileType = text; path = gitignore; sourceTree = "<group>"; };
 		7FD603B12BFB4A3400924DEB /* ModelContainerPreview.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ModelContainerPreview.swift; sourceTree = "<group>"; };
 		7FD603B32BFB4A6400924DEB /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		7FE062842BFF9050004283C7 /* MainRootView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainRootView.swift; sourceTree = "<group>"; };
@@ -72,6 +72,7 @@
 		7F47CD982B76A132008B5024 /* SwiftDataApp */ = {
 			isa = PBXGroup;
 			children = (
+				7FCA463F2C00F911005F3E77 /* Git */,
 				7F9553A22BFF4164007CC505 /* SwiftDataApp.entitlements */,
 				7F47CD992B76A132008B5024 /* SwiftDataApp.swift */,
 				7F47CD9D2B76A132008B5024 /* Item.swift */,
@@ -80,7 +81,6 @@
 				7F47CD9B2B76A132008B5024 /* ContentView.swift */,
 				7FE062842BFF9050004283C7 /* MainRootView.swift */,
 				7F9553A32BFF4A27007CC505 /* ItemCategoryListView.swift */,
-				7FD02F1A2BF9EF2000B0BAEB /* ItemListView.swift */,
 				7F47CDA92B76A3CB008B5024 /* DetailView.swift */,
 				7FE062862BFF909D004283C7 /* ItemEditor.swift */,
 				7F47CD9F2B76A136008B5024 /* Assets.xcassets */,
@@ -97,6 +97,14 @@
 				7F47CDA22B76A136008B5024 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		7FCA463F2C00F911005F3E77 /* Git */ = {
+			isa = PBXGroup;
+			children = (
+				7FCA46402C00F979005F3E77 /* gitignore */,
+			);
+			path = Git;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -158,6 +166,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				7F47CDA32B76A136008B5024 /* Preview Assets.xcassets in Resources */,
+				7FCA46412C00F979005F3E77 /* gitignore in Resources */,
 				7F47CDA02B76A136008B5024 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -177,7 +186,6 @@
 				7FD603B22BFB4A3400924DEB /* ModelContainerPreview.swift in Sources */,
 				7F47CDAA2B76A3CB008B5024 /* DetailView.swift in Sources */,
 				7F47CD9E2B76A132008B5024 /* Item.swift in Sources */,
-				7FD02F1B2BF9EF2000B0BAEB /* ItemListView.swift in Sources */,
 				7F47CD9A2B76A132008B5024 /* SwiftDataApp.swift in Sources */,
 				7FD603B42BFB4A6400924DEB /* SampleData.swift in Sources */,
 				7F78A6C02BFBB4FA00986DE3 /* ItemCategory.swift in Sources */,
