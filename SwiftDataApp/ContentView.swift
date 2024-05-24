@@ -8,43 +8,49 @@
 import SwiftUI
 import SwiftData
 
+
 struct ContentView: View {
-    @State private var sheetIsPresented = false
-    @State var sortSelection: SortOption = .asEntered
-//    @State private var navigationContext = NavigationContext()
+//    @State private var sheetIsPresented = false
+//    @State var sortSelection: SortOption = .asEntered
+    @State private var navigationContext = NavigationContext()
     
     var body: some View {
-        NavigationStack {
-            SortedListView(sortSelection: sortSelection)
-                
-                .navigationTitle("To Do List")
-                .navigationBarTitleDisplayMode(.automatic)
-            
-                .toolbar {
-                    ToolbarItem {
-                        Button(action: {
-                            sheetIsPresented.toggle()
-                        }, label: {
-                            Image(systemName: "plus")
-                        })
-                    }
-                    ToolbarItem(placement: .bottomBar) {
-                        Picker("", selection: $sortSelection) {
-                            ForEach(SortOption.allCases, id: \.self) { sortOrder in
-                                Text(sortOrder.rawValue)
-                            }
-                        }
-                        .pickerStyle(.segmented)
-                        
-                    }
-                    
-                }
-                .sheet(isPresented: $sheetIsPresented) {
-                    DetailView(item: Item())
-                }
-            
-        }
-//        .environment(navigationContext)
+        
+        //        NavigationStack {
+        //            SortedListView(sortSelection: sortSelection)
+        //
+        //                .navigationTitle("To Do List")
+        //                .navigationBarTitleDisplayMode(.automatic)
+        //
+        //                .toolbar {
+        //                    ToolbarItem {
+        //                        Button(action: {
+        //                            sheetIsPresented.toggle()
+        //                        }, label: {
+        //                            Image(systemName: "plus")
+        //                        })
+        //                    }
+        //                    ToolbarItem(placement: .bottomBar) {
+        //                        Picker("", selection: $sortSelection) {
+        //                            ForEach(SortOption.allCases, id: \.self) { sortOrder in
+        //                                Text(sortOrder.rawValue)
+        //                            }
+        //                        }
+        //                        .pickerStyle(.segmented)
+        //
+        //                    }
+        //
+        //                }
+        //                .sheet(isPresented: $sheetIsPresented) {
+        //                    DetailView(item: Item())
+        //                }
+        //
+        //        }
+        
+        MainRootView()
+            .environment(navigationContext)
+        
+        
         
     }
 }

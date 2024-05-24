@@ -10,12 +10,15 @@ import SwiftData
 
 @main
 struct SwiftDataApp: App {
-    
     var body: some Scene {
-        WindowGroup {
+        WindowGroup() {
             ContentView()
-                .modelContainer(for: Item.self)
         }
-       
+        .modelContainer(for: ItemCategory.self)
+#if os(macOS)
+        .commands {
+            SidebarCommands()
+        }
+#endif
     }
 }

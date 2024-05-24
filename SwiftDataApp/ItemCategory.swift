@@ -10,12 +10,12 @@ import SwiftData
 
 @Model
 final class ItemCategory {
-    @Attribute(.unique)  var name: String
+    @Attribute(.unique)  var title: String
     @Relationship(deleteRule: .cascade, inverse: \Item.category) var  items = [Item]()
     
-    init(name: String) {
-        self.name = name
-      
+    init(title: String) {
+        self.title = title
+       
     }
 }
 

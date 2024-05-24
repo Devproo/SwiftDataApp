@@ -10,13 +10,13 @@ import SwiftData
 
 extension ModelContainer {
     static var sample: () throws -> ModelContainer = {
-        let schema = Schema([Item.self])
+        let schema = Schema([Item.self, ItemCategory.self])
         let configuration = ModelConfiguration(isStoredInMemoryOnly: true)
         let container = try ModelContainer(for: schema, configurations: [configuration])
         
         Task { @MainActor in
 
-            Item.inserSampleData(modelContext: container.mainContext)
+            ItemCategory.inserSampleData(modelContext: container.mainContext)
         }
         return container
     }
